@@ -1,2 +1,2 @@
 # MyPasswordMeter
-Password Meter
+The Password Meter

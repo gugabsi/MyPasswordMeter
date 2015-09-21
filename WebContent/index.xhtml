@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+    
+    		<STYLE type="text/css">
+		   		bkg-inner-fileset { background-color: #F8F8F8; }
+		 	</STYLE>
+		    	
+    
+    	<link rel="stylesheet" type="text/css" href="css/pwdmeter.css" />
+        <title>My Password Meter</title>
+    </h:head>
+    <h:body>
+        <form jsf:id="formPasswordMeter" >
+        	
+        	<fieldset class="external-fileset">
+	        	<h:outputText value="avaliador de segurança de senha" styleClass="title-font"></h:outputText>
+	        	
+	        	<br></br>
+	        	<br></br>
+	        	
+	        	<fieldset class="inner-fileset">
+		            <input 	type="text" 
+		            		jsf:id="txtInputPassword" 
+		            		jsf:value="#{passwordMeterController.passwordMeterVO.inputPassword}"
+		            		class="input-pwd">
+		                
+		                <f:ajax event="keyup" 
+		                		execute="@this txtInputPassword" 
+		                		render="lbScore lbComplexity msgs" listener="#{passwordMeterController.calcula()}"/>
+		            </input>
+		            <br></br>
+		            <label jsf:id="lbScore" jsf:value="#{passwordMeterController.passwordMeterVO.score}"  class="score-red-font"/>
+		            &nbsp;
+		            <h:outputLabel id="lbComplexity" value="#{passwordMeterController.passwordMeterVO.complexity}" styleClass="complexity-red-font"/>
+		       </fieldset>
+            </fieldset>
+        </form>
+    </h:body>
+</html>
+

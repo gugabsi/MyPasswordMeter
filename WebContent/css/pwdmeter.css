@@ -1,0 +1,26 @@
+@CHARSET "ISO-8859-1";
+
+.inner-fileset {
+    background-color: #F8F8F8;
+}
+
+.external-fileset{
+	margin-top: 30px;
+}
+
+.title-font{
+	color: balck;
+	text-transform: uppercase;
+}
+
+.input-pwd{
+	margin-bottom: 5px;
+}
+
+.score-red-font{
+	background-color: grey;
+}
+
+.complexity-red-font{
+	background-color: red;
+}
